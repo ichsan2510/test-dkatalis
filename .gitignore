@@ -1,0 +1,14 @@
+.DS_Store
+
+# Terraform
+terraform/.terraform/
+terraform/*.tfstate
+terraform/*.tfstate.*
+terraform/*.tfplan
+terraform/*.tfvars
+terraform/crash.log
+terraform/crash.*.log
+
+# Generated SSH key material (created by terraform apply, never commit it)
+terraform/generated/
+*.pem
