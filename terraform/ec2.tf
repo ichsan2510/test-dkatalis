@@ -1,6 +1,6 @@
 data "aws_ami" "ubuntu" {
   most_recent = true
-  owners      = ["099720109477"] # Canonical
+  owners      = ["099720109477"] 
 
   filter {
     name   = "name"
@@ -13,9 +13,6 @@ data "aws_ami" "ubuntu" {
   }
 }
 
-# Generated purely so the exercise is self-contained (no pre-existing key
-# pair required). The private key only ever touches local disk, never state
-# output text, and is excluded from git via .gitignore.
 resource "tls_private_key" "ssh" {
   algorithm = "RSA"
   rsa_bits  = 4096
@@ -47,7 +44,7 @@ resource "aws_instance" "elasticsearch" {
   }
 
   metadata_options {
-    http_tokens = "required" # IMDSv2 only
+    http_tokens = "required" 
   }
 
   user_data = templatefile("${path.module}/templates/bootstrap.sh.tpl", {

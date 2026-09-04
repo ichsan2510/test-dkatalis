@@ -28,8 +28,6 @@ output "verify_script" {
   value       = "./scripts/verify.sh"
 }
 
-# Raw values consumed by scripts/verify.sh (kept separate from the
-# human-readable *_command outputs above).
 output "aws_region" {
   value = var.aws_region
 }

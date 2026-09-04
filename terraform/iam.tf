@@ -1,6 +1,3 @@
-# Instance role scoped to exactly one action the box needs to perform:
-# writing (and later, us reading back) the generated elastic superuser
-# password under this project's SSM parameter path. Nothing broader.
 data "aws_caller_identity" "current" {}
 
 locals {
